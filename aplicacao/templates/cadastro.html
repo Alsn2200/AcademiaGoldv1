@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename ='cadastro.css')}}">
+    <title>Login</title>
+</head>
+<style>
+    body {
+        background-image: linear-gradient(to right, black, rgba(001, 40, 9, 0.859));
+        background-size: 100%;
+    }
+</style>
+
+<body>
+    <div class="background">
+        <header>
+           <div class="cabeçalho-link">
+                <li>
+                    <a href="{{ url_for( 'home') }}">Home</a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for( 'login') }}">Login</a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for( 'cadastro') }}">Cadastro</a>
+                </li>
+
+                <li>
+                    <a href="#"></a>
+                </li>
+
+            </div>    <!--*cabeçalho-link*-->
+        </header>
+
+        <div class="box">
+            <form action="">
+                {{ form.csrf_token }}
+
+                    <legend> Cadastro de Usuário </legend>
+                    <br>
+                    <div class="input-box">
+
+                        {{ form.nome(class="inputUser") }}
+                        {{ form.nome.label(class="labelInput" ) }}
+                    </div>
+                    <br>
+                    <div class="input-box">
+                        {{ form.usuario(class="inputUser") }}
+                        {{ form.usuario.label(class="labelInput" ) }}
+                    </div>
+                     <br>
+                    <div class="input-box">
+                        {{ form.telefone(class="inputUser") }}
+                        {{ form.telefone.label(class="labelInput" ) }}
+                    </div>
+                     <br>
+                    <div class="input-box">
+                        {{ form.tipoTreino(class="inputUser") }}
+                        {{ form.tipoTreino.label(class="labelInput" ) }}
+                    </div>
+
+                     <br>
+                    <div class="input-box">
+                       {{ form.pagamento(class="inputUser") }}
+                        {{ form.pagamento.label(class="labelInput" ) }}
+                    </div>
+
+                    <br><br>
+                       <div class="input-box">
+                         {{ form.senha(class="inputUser") }}
+                        {{ form.senha.label(class="labelInput" ) }}
+                    </div>
+                    <br>
+                       <div class="input-box">
+                           {{ form.confirmacao(class="inputUser") }}
+                        {{ form.confirmacao.label(class="labelInput" ) }}
+                    </div>
+
+                    <br><br>
+
+                     {{ form.submit_criar(class="buttonForm") }}
+
+            </form>
+
+        </div><!--container-forms-->
+    </div><!--background-->
+
+
+
+    <script type="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</body>
+
+</html

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename ='home.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="text/javascript" src="index.js"></script>
+    <title>Home</title>
+</head>
+
+  <style>
+    body {
+        background-image: linear-gradient(to right, black, rgba(001, 40, 9, 0.859));
+        background-size: 100%;
+    }
+</style>
+
+<body>
+
+    <div class="background">
+        <header>
+            <div class="cabeçalho-link">
+                <li>
+                    <a href="{{ url_for( 'home') }}">Home</a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for( 'login') }}">Login</a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for( 'cadastro') }}">Cadastro</a>
+                </li>
+
+                <li>
+                    <a href="#"></a>
+                </li>
+               
+            </div><!--cabeçalho-link-->
+        </header>
+
+        <div class="container-text">
+            <div class="text">
+                <h3></h3>
+                <h1>Academia <span> Gold </span></h1>
+                <p>Faça agora sua <br>inscrição </p>
+                <div class="redes-social">
+                    <a href="#"><i class="facebook"></i></a>
+                    <a href="#"><i class="twitter"></i></a>
+                    <a href="#"><i class="instagram"></i></a>
+                  
+                </div><!--redes-social-->
+                <button onclick="abrirAlert" class="btn"> <a href="{{ url_for( 'cadastro') }} " id="textButton">Se inscreva! </a></button>
+            </div><!--text-->
+        </div><!--container-text-->
+    </div><!--background-->
+
+    <script type="script.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+</body>
+</html>

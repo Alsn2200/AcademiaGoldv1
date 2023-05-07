@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename ='login.css')}}">
+    <title>Login</title>
+</head>
+<style>
+    body {
+        background-image: linear-gradient(to right, black, rgba(001, 40, 9, 0.859));
+        background-size: 100%;
+    }
+</style>
+
+<body>
+    <div class="background">
+        <header>
+            <div class="cabeçalho-link">
+                <li>
+                    <a href="{{ url_for( 'home') }}">Home</a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for( 'login') }}">Login</a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for( 'cadastro') }}">Cadastro</a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for( 'cadastro') }}"></a>
+                </li>
+
+            </div><!--cabeçalho-link-->
+        </header>
+
+        <div class="container-forms">
+
+            <form>
+                {{ form.csrf_token }}
+
+                <h1> Login </h1>
+                {{ form.usuario(class="inputForm") }}
+
+                <br><br>
+
+                {{ form.senha(class="inputForm") }}
+                <br><br>
+                <button type="submit"> Entrar </button>
+            </form>
+
+        </div><!--container-forms-->
+    </div><!--background-->
+
+
+
+    <script type="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</body>
+
+</html
