@@ -12,11 +12,14 @@ from aplicacao.models import Usuario
 #     database.create_all()
 
 '''Insere um usuário inicial na base de dados'''
-with app.app_context():
-    senha_crypto = bcrypt.generate_password_hash('123456')
-    user = Usuario(usuario='admin', nome='aaaa',telefone='7512345678',tipoTreino='Hipertrofia', pagamento='pix', senha=senha_crypto)
-    database.session.add(user)
-    database.session.commit()
+# with app.app_context():
+#     senha_crypto = bcrypt.generate_password_hash('123456')
+#     user = Usuario(usuario='felipao', nome='feliapooo',telefone='7512345659',tipoTreino='Emagrecimento', pagamento='pix', senha=senha_crypto)
+#     print('testee1')
+#     database.session.add(user)
+#     print('teste2')
+#     database.session.commit()
+#     print('teste3')
 
 #Realiza um selecta em toda a tabela
 # with app.app_context():

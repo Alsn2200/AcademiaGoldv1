@@ -2,11 +2,10 @@ from aplicacao import app, database, bcrypt
 from flask import redirect, render_template, url_for, flash
 from aplicacao.forms import FormLogin, FormCadastrarUsuario
 from aplicacao.models import Usuario
-from flask_login import login_user, logout_user, login_required
+from flask_login import login_user
 
 
 @app.route('/', methods=['GET', 'POST'])
-@app.route('/home')
 def home():
     return render_template('home.html')
 @app.route('/login')
@@ -22,22 +21,28 @@ def login():
             flash(f'Usuário ou senha inválidos', 'alert alert-danger')
 
     return render_template('login.html', form=form)
-@app.route('/cadastro')
+@app.route('/cadastro',  methods=['GET', 'POST'])
 def cadastro():
+    print("testeee1")
     form = FormCadastrarUsuario()
+    print("testeee2")
     if form.validate_on_submit():
+        print("testee3")
         senha_crypto = bcrypt.generate_password_hash(form.senha.data)
         print(f'senha {form.senha.data}')
         print(f'senha criptografada {senha_crypto}')
         try:
+            print('Deu certo')
             user = Usuario(usuario=form.usuario.data, telefone=form.telefone.data,tipoTreino=form.tipoTreino.data,pagamento=form.pagamento.data, senha=senha_crypto)
+            print("teste4")
             database.session.add(user)
+            print('Teste5')
             database.session.commit()
+            print('teste6')
             flash(f'Usuário cadastrado com sucesso', 'alert alert-success')
-            return redirect('login')
+            return redirect (url_for('login'))
         except:
+            print('Deu errado')
             flash(f'Não foi possível cadastrar usuário', 'alert alert-danger')
     return render_template('cadastro.html', form=form)
-@app.route('/index')
-def index():
-    return render_template('index.html')
+

@@ -39,13 +39,12 @@
         </header>
 
         <div class="box">
-            <form action="">
+            <form method="POST">
                 {{ form.csrf_token }}
 
                     <legend> Cadastro de Usuário </legend>
                     <br>
                     <div class="input-box">
-
                         {{ form.nome(class="inputUser") }}
                         {{ form.nome.label(class="labelInput" ) }}
                     </div>
@@ -67,24 +66,27 @@
 
                      <br>
                     <div class="input-box">
-                       {{ form.pagamento(class="inputUser") }}
+
+                        {{ form.pagamento(class="inputUser") }}
                         {{ form.pagamento.label(class="labelInput" ) }}
                     </div>
 
                     <br><br>
-                       <div class="input-box">
-                         {{ form.senha(class="inputUser") }}
-                        {{ form.senha.label(class="labelInput" ) }}
+                    <div class="input-box">
+                       {{ form.senha(class="inputUser") }}
+                       {{ form.senha.label(class="labelInput" ) }}
                     </div>
                     <br>
-                       <div class="input-box">
-                           {{ form.confirmacao(class="inputUser") }}
-                        {{ form.confirmacao.label(class="labelInput" ) }}
+                    <div class="input-box">
+                       {{ form.confirmacao(class="inputUser") }}
+                       {{ form.confirmacao.label(class="labelInput" ) }}
                     </div>
 
                     <br><br>
+                    <div>
+                        {{ form.submit_criar(class="buttonForm") }}
 
-                     {{ form.submit_criar(class="buttonForm") }}
+                    </div>
 
             </form>
 
@@ -97,4 +99,4 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </body>
 
-</html
+</html>
